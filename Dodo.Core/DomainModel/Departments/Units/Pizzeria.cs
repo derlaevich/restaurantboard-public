@@ -38,7 +38,7 @@ namespace Dodo.Core.DomainModel.Departments.Units
 
         }
 
-        public Int32 GetYearsOld(DateTime currentDateTime)
+        public Int32 GetAgeInYears(DateTime currentDateTime)
         {
             if (!BeginDateTimeWork.HasValue) return 0;
 
@@ -57,7 +57,7 @@ namespace Dodo.Core.DomainModel.Departments.Units
             DateTime zeroDate = new DateTime(1, 1, 1);
             TimeSpan diffDate = currentDateTime.Subtract(BeginDateTimeWork.Value);
 
-            return (zeroDate + diffDate).Month - 1 + (monthInYear * GetYearsOld(currentDateTime));
+            return (zeroDate + diffDate).Month - 1 + (monthInYear * GetAgeInYears(currentDateTime));
         }
     }
 }
