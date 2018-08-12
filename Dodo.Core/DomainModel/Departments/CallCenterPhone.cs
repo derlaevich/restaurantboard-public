@@ -26,7 +26,7 @@ namespace Dodo.Core.DomainModel.Departments
             if (!String.IsNullOrEmpty(IconPath))
             {
                 //TODO:
-                return (host.TrimEnd('/', '\\') + "/" + IconPath).Replace('\\', '/');
+                return (host.TrimEnd('/', '\\') + "/" + IconPath).ReplaceDirectorySeparator();
             }
 
             if (!String.IsNullOrEmpty(IconSitePath))

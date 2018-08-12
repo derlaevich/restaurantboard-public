@@ -158,7 +158,7 @@ namespace Dodo.RestaurantBoard.Site.Controllers
                 result = restaurantBanners.Select(
                     x => new
                     {
-                        BannerUrl = x.Url.Replace('\\', '/'),
+                        BannerUrl = x.Url.ReplaceDirectorySeparator(),
                         DisplayTime = x.DisplayTime * 1000
                     });
             }

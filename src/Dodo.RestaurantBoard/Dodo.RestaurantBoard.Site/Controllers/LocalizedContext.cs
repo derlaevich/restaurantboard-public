@@ -3,6 +3,7 @@ using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Threading;
+using Dodo.Core.Common;
 using Microsoft.AspNetCore.Hosting;
 
 namespace Dodo.RestaurantBoard.Site.Controllers {
@@ -31,7 +32,7 @@ namespace Dodo.RestaurantBoard.Site.Controllers {
 
         private static string ConvertLocalPathToRelativeUrl(string path, int serverPathLength)
         {
-            return path.Substring(serverPathLength).Replace('\\', '/');
+            return path.Substring(serverPathLength).ReplaceDirectorySeparator();
         }
     }
 }
